@@ -1,0 +1,218 @@
+/* Shared Project Card & Responsive Grid Layout */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Individual Project Gallery Card */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 1.75rem;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              box-shadow 0.25s ease;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--color-orange-accent);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+.project-card:focus-visible {
+  outline: 2px solid var(--color-orange-accent);
+  outline-offset: 2px;
+}
+
+/* Card Header: Title left, single Category badge right */
+.project-card-header {
+  margin-bottom: 0.85rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 0.35rem;
+}
+
+.project-title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.15rem, 1.3vw, 1.3rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.28;
+  margin: 0;
+  flex: 1;
+}
+
+/* Single Category Badge (WORK, PERSONAL, SCHOOL) */
+.project-category-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: var(--radius-badge);
+  background-color: var(--color-badge-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-orange-accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.project-category-badge.category-work {
+  border-color: rgba(242, 103, 44, 0.5);
+  background-color: var(--color-orange-glow);
+  color: var(--color-orange-accent);
+}
+
+.project-category-badge.category-personal {
+  border-color: rgba(242, 103, 44, 0.35);
+  background-color: var(--color-badge-bg);
+  color: var(--color-orange-accent);
+}
+
+.project-category-badge.category-school {
+  border-color: var(--color-border);
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+}
+
+/* Subtitle: Left aligned, orange accent color */
+.project-subtitle {
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--color-orange-accent);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Short Description */
+.project-description {
+  font-size: 0.915rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.25rem;
+  flex: 1 1 auto;
+}
+
+.project-card-divider {
+  height: 1px;
+  background-color: var(--color-border);
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+/* Footer: Compact Technology Tags & Bottom-Right Arrow Action */
+.project-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
+}
+
+.tag-pill {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-badge-bg);
+  color: var(--color-badge-text);
+  border: 1px solid var(--color-border);
+  line-height: 1.4;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.project-card:hover .tag-pill {
+  border-color: var(--color-border-subtle);
+  background-color: var(--color-bg-surface);
+}
+
+.project-card-action {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Circular Diagonal-Arrow Action Icon */
+.project-card-arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  transition: all 0.2s ease;
+}
+
+.project-card:hover .project-card-arrow-btn,
+.project-card:focus-visible .project-card-arrow-btn {
+  background-color: var(--color-orange-accent);
+  border-color: var(--color-orange-accent);
+  color: #FFFFFF;
+  transform: translate(2px, -2px);
+  box-shadow: 0 4px 10px var(--color-orange-glow);
+}
+
+/* Responsive Grid Breakpoints */
+/* 2 columns on medium screens */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* 1 column on mobile */
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .project-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .project-card-action {
+    align-self: flex-end;
+  }
+}

@@ -1,0 +1,233 @@
+.featured-projects-section {
+  scroll-margin-top: 70px;
+}
+
+.section-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.view-all-projects-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-orange-accent);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.view-all-projects-btn:hover {
+  background-color: var(--color-badge-bg);
+  border-color: var(--color-orange-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--color-orange-glow);
+}
+
+/* 3-Column Projects Grid with Identical Geometry */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Individual Project Card */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 1.75rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--color-orange-accent);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.project-card-header {
+  margin-bottom: 1rem;
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Perfectly aligned top title row */
+.project-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 48px;
+  margin-bottom: 0.25rem;
+}
+
+.project-title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.15rem, 1.35vw, 1.3rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.25;
+  margin: 0;
+  flex: 1;
+}
+
+/* Unified Category Badges: Personal, School, Work */
+.project-category-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: var(--radius-badge);
+  background-color: var(--color-badge-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-orange-accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.project-category-badge.category-work {
+  border-color: rgba(242, 103, 44, 0.5);
+  background-color: var(--color-orange-glow);
+}
+
+.project-subtitle {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-orange-accent);
+  line-height: 1.35;
+  min-height: 42px;
+  margin: 0;
+}
+
+.project-description {
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.25rem;
+  min-height: 135px;
+  flex: 1 1 auto;
+}
+
+.project-card-divider {
+  height: 1px;
+  background-color: var(--color-border);
+  margin-bottom: 1.25rem;
+  opacity: 0.7;
+}
+
+.project-card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+/* Pixel-aligned tech stack tags container */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 72px;
+  height: 72px;
+  align-content: flex-start;
+  overflow: hidden;
+}
+
+.tag-pill {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-badge-bg);
+  color: var(--color-badge-text);
+  border: 1px solid var(--color-border);
+  transition: all 0.2s ease;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.project-card:hover .tag-pill {
+  border-color: var(--color-border);
+  background-color: var(--color-bg-surface);
+}
+
+.project-card-action {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Arrow Icon Button Only (No 'Case Study' text) */
+.project-card-arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  transition: all 0.2s ease;
+}
+
+.project-card:hover .project-card-arrow-btn {
+  background-color: var(--color-orange-accent);
+  border-color: var(--color-orange-accent);
+  color: #FFFFFF;
+  transform: translate(2px, -2px);
+}
+
+/* Responsive Grid Breakpoints */
+@media (max-width: 960px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .section-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .project-tags {
+    height: auto;
+    min-height: auto;
+  }
+  .project-card-header,
+  .project-title-row,
+  .project-subtitle,
+  .project-description {
+    min-height: auto;
+  }
+}

@@ -1,0 +1,55 @@
+:root {
+  /* Core brand palette */
+  --color-orange-accent: #F2672C;
+  --color-orange-glow: rgba(242, 103, 44, 0.15);
+  --color-orange-hover: #e0551b;
+  --font-mono: 'Space Mono', 'JetBrains Mono', 'Fira Code', monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Inter', sans-serif;
+  --transition-theme: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  --radius-card: 14px;
+  --radius-badge: 6px;
+  --radius-pill: 9999px;
+  --max-width-content: 1120px;
+
+  /* Default theme values (Dark) */
+  --color-bg-primary: #0F0F0F;
+  --color-bg-surface: #121212;
+  --color-bg-card: #1D1C1B;
+  --color-bg-card-hover: #262423;
+  --color-border: #2A2826;
+  --color-border-subtle: #1D1C1B;
+  --color-text-primary: #F4F4F4;
+  --color-text-secondary: #9E9E9E;
+  --color-text-muted: #666666;
+  --color-badge-bg: #181716;
+  --color-badge-text: #E0E0E0;
+}
+
+:root[data-theme="dark"] {
+  --color-bg-primary: #0F0F0F;
+  --color-bg-surface: #121212;
+  --color-bg-card: #1D1C1B;
+  --color-bg-card-hover: #262423;
+  --color-border: #2A2826;
+  --color-border-subtle: #1D1C1B;
+  --color-text-primary: #F4F4F4;
+  --color-text-secondary: #9E9E9E;
+  --color-text-muted: #666666;
+  --color-badge-bg: #181716;
+  --color-badge-text: #E0E0E0;
+}
+
+:root[data-theme="light"] {
+  --color-bg-primary: #F4F4F4;
+  --color-bg-surface: #ECECEC;
+  --color-bg-card: #FFFFFF;
+  --color-bg-card-hover: #F8F8F8;
+  --color-border: #E0DFDE;
+  --color-border-subtle: #ECEAE8;
+  --color-text-primary: #0F0F0F;
+  --color-text-secondary: #555555;
+  --color-text-muted: #888888;
+  --color-badge-bg: #EAE8E6;
+  --color-badge-text: #222222;
+}
